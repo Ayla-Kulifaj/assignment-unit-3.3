@@ -5,22 +5,38 @@ console.log('****** Part Supply *******');
 
 // 1. Create a variable called 'partsNeeded' with a value of the number 40.
 console.log('1. Create partsNeeded:');
+//PSUEDO CODE--create a variable called 'partNeeded' and assign it to the number 40
 
+let partsNeeded=40;
+console.log(partsNeeded);
 
 // 2. Create a variable called 'supplyChanges' whose value is an array containing
 //    the following numbers: 3, 5, -6, 0, 7, 11.
-console.log('2. Create supplyChanges:');
+//PSUEDO CODE--create a variable called 'supplyChanges' and assign it to an array[].
 
+console.log('2. Create supplyChanges:');
+let supplyChanges=[3,5,-6,0,7,11];
+console.log(supplyChanges);
 
 // 3. Create a variable called 'secondItem' and assign it the value of the second
 //    item in the 'supplyChanges' array.
+//PSUEDO CODE--create a variable called 'secondItem' & assign it to the the supplyChanges 
+//array index point [1] to access the second value of the supplyChanges array.
+
 console.log('3. Access the second value of supplyChanges:');
+let secondItem= supplyChanges[1];
+console.log('Second item:',secondItem);
 
 
 // 4. The last value in the 'supplyChanges' array was added by mistake.
 //    Remove it from the array and store it inside a new variable called 'removedItem'.
-console.log('4. Remove the last value from supplyChanges:');
+//PSUEDO CODE-- create a variable named removedItem you can both assign 
+// it to the last item in 'supplyChange' and removed the last item in 'supplyChanges'
+//using the method .pop()
 
+console.log('4. Remove the last value from supplyChanges:');
+let removedItem=supplyChanges.pop();
+console.log('removedItem',removedItem);
 
 // 5. A delivery of 25 more parts arrived. Add the value 25 to the end of the array
 console.log('5. Add the value 25 into supplyChanges.');

@@ -39,8 +39,10 @@ let removedItem=supplyChanges.pop();
 console.log('removedItem',removedItem);
 
 // 5. A delivery of 25 more parts arrived. Add the value 25 to the end of the array
+//PSUEDO CODE--Need to add the element 25 to the array supplyChanges. Use .push() method
 console.log('5. Add the value 25 into supplyChanges.');
-
+supplyChanges.push(25);
+console.log(supplyChanges);
 
 // 6. Create three new variables named 'positives', 'negatives', and
 //    'zeroes' whose values are empty arrays. Then, write a for loop
@@ -49,8 +51,27 @@ console.log('5. Add the value 25 into supplyChanges.');
 //      - If the value is a positive number, push it into the 'positives' array.
 //      - If the value is a negative number, push it into the 'negatives' array.
 //      - If the value is a zero, push it into the 'zeroes' array.
+//PSUEDO CODE--1.Create your new variables with empty list. Create an iteration
+//start point (iteration) for the loop. And create different conditions
+// to assign different values that are in the supplyChanges to the 3 different variables 
+//empty list.
 console.log('6. Looping through supplyChanges to populate arrays with positive, negative, and zero values:');
 
+let positives=[];
+let negatives=[];
+let zeroes=[];
+for (let i=0; i<supplyChanges.length;i++) {
+  if (supplyChanges[i]>0){
+    positives.push(supplyChanges[i]);
+  } else if (supplyChanges[i]<0){
+    negatives.push(supplyChanges[i]);
+  } else{
+    zeroes.push(supplyChanges[i]);
+  }
+}
+console.log('Positives:', positives);
+console.log('Negative:', negatives);
+console.log('Zeroes:', zeroes)
 
 
 
@@ -58,14 +79,40 @@ console.log('6. Looping through supplyChanges to populate arrays with positive, 
 // 7. Rewrite the 'for' loop from #6 as a 'for...of' loop. Instead of 'positives',
 //    'negatives', and 'zeroes', create three new arrays named 'stretchPositives',
 //    'stretchNegatives', and 'stretchZeroes'. 
+
+//PSUEDO CODE -- creating 3 new empty arrays. then using for... of loop to
+//simply reassign #6 arrays.
 console.log('7. Looping through supplyChanges to populate more arrays with positive, negative, and zero values:');
 
+let stretchPositives= [];
+let stretchNegatives= [];
+let stretchZeroes= [];
+for (let value of supplyChanges) {
+  if(value>0) {
+    stretchPositives.push(value);
+  } else if (value<0) {
+    stretchNegatives.push(value);
+  } else {
+    stretchZeroes.push(value);
+  }
+}
+console.log('stretchPositives', stretchPositives);
+console.log('stretchNegatives', stretchNegatives);
+console.log('stretchZeroes', stretchZeroes);
 
 // 8. Create a variable called 'totalParts' and assign it a value of 0.
 //    Then, write a loop that adds each value of the 'supplyChanges'
 //    array to the 'totalParts' variable.
-console.log('8. Looping through supplyChanges to calculate the sum:');
 
+//PSUEDO CODE -- assigning the value 0 to totalParts variable. have it so 
+//each value of supplyChanges is added to total parts using a for of loop and 
+//+= operator.
+console.log('8. Looping through supplyChanges to calculate the sum:');
+let totalParts=0;
+for (let value of supplyChanges){
+  totalParts+= value;
+}
+console.log('totalParts',totalParts);
 
 // 9. We have a large stash of parts in our warehouse that we 
 //    need to box up and get ready for shipment. There are 572
@@ -78,10 +125,20 @@ console.log('8. Looping through supplyChanges to calculate the sum:');
 //    the value of 'parts' should reflect how many parts are
 //    "left over," and the value of 'boxesFilled' should reflect
 //    how many boxes were filled.
+//PSUEDO CODE -- Need to create variables & assign values. create a while loop that
+//initilazes parts to boxes filled with the condition that 7 are added
+// to a box filled and 7 is removed from the parts untill there is no 
+//more that can be removed. and stating how many boxes are filled
+//7 can be in a filled box. 
 console.log('9. Filling boxes with a "while" loop');
-
-
-
+let parts=572;
+let boxesFilled=0;
+while (parts>=7) {
+  parts-=7;
+  boxesFilled+=1;
+}
+console.log(`The Parts stil remaining: ${parts}`);
+console.log(`The boxes that are filled: ${boxesFilled}`);
 
 // DO NOT MODIFY
 // Used for automated testing
